@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,17 +14,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 152 29% 66%;
+    --primary-foreground: 152 29% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 30% 76%;
+    --secondary-foreground: 210 30% 30%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 100% 95%;
+    --accent-foreground: 43 100% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -32,61 +33,16 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 210 30% 76%;
+    --sidebar-foreground: 210 30% 25%;
+    --sidebar-primary: 210 30% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 30% 90%;
+    --sidebar-accent-foreground: 210 30% 25%;
+    --sidebar-border: 210 30% 70%;
+    --sidebar-ring: 210 30% 60%;
   }
 }
 
@@ -96,6 +52,44 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-pharma-cream text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .skeuomorphic-card {
+    @apply bg-white rounded-lg border border-pharma-gray-dark/20 shadow-skeuomorphic overflow-hidden;
+  }
+  
+  .skeuomorphic-button {
+    @apply px-4 py-2 rounded-lg bg-gradient-to-b from-white to-pharma-gray-light border border-pharma-gray-dark/20 shadow-skeuomorphic hover:shadow-skeuomorphic-elevated active:shadow-skeuomorphic-pressed transition-shadow duration-100 flex items-center justify-center gap-2;
+  }
+  
+  .skeuomorphic-button-primary {
+    @apply px-4 py-2 rounded-lg bg-gradient-to-b from-pharma-green-light to-pharma-green border border-pharma-green-dark/30 shadow-skeuomorphic hover:shadow-skeuomorphic-elevated active:shadow-skeuomorphic-pressed transition-shadow duration-100 text-pharma-green-dark flex items-center justify-center gap-2;
+  }
+  
+  .skeuomorphic-button-secondary {
+    @apply px-4 py-2 rounded-lg bg-gradient-to-b from-pharma-blue-light to-pharma-blue border border-pharma-blue-dark/30 shadow-skeuomorphic hover:shadow-skeuomorphic-elevated active:shadow-skeuomorphic-pressed transition-shadow duration-100 text-pharma-blue-dark flex items-center justify-center gap-2;
+  }
+  
+  .skeuomorphic-input {
+    @apply bg-white border border-pharma-gray-dark/20 rounded-lg shadow-skeuomorphic-inset px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pharma-blue/30;
+  }
+  
+  .skeuomorphic-select {
+    @apply bg-white border border-pharma-gray-dark/20 rounded-lg shadow-skeuomorphic-inset px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pharma-blue/30;
+  }
+  
+  .skeuomorphic-panel {
+    @apply bg-white border border-pharma-gray-dark/20 rounded-lg shadow-skeuomorphic-elevated p-6;
+  }
+  
+  .skeuomorphic-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-pharma-gray-dark/20 to-transparent my-6;
+  }
+  
+  .skeuomorphic-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-b border shadow-skeuomorphic;
   }
 }

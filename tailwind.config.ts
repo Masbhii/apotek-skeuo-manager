@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,41 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Pharmacy themed colors
+				pharma: {
+					green: {
+						DEFAULT: '#89C5B0', // mint green
+						light: '#D3EFE3',
+						dark: '#598577'
+					},
+					blue: {
+						DEFAULT: '#A2C4E0', // soft blue
+						light: '#D3E5F3',
+						dark: '#6A8CAC'
+					},
+					cream: {
+						DEFAULT: '#F7F2EA', // warm cream
+						light: '#FBF9F5',
+						dark: '#E5DED0'
+					},
+					peach: {
+						DEFAULT: '#FDE1D3', // soft peach
+						light: '#FEF0EA',
+						dark: '#E6BCA6'
+					},
+					gray: {
+						DEFAULT: '#F1F0FB', // soft gray
+						light: '#F8F8FD',
+						dark: '#C8C7D9'
+					},
 				}
+			},
+			boxShadow: {
+				'skeuomorphic': '0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+				'skeuomorphic-inset': 'inset 0 2px 5px rgba(0, 0, 0, 0.1)',
+				'skeuomorphic-elevated': '0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+				'skeuomorphic-pressed': 'inset 0 2px 5px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.6)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,20 +105,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				}
 			},
 			animation: {
